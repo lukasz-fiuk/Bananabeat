@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Lato", sans-serif;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "BRUSHSTRIKE";
+  src: url("./fonts/Brushstriketrial.otf") format("opentype"),
+    url("./fonts/Brushstriketrial.svg") format("svg"),
+    url("./fonts/Brushstriketrial.ttf") format("truetype"),
+    url("./fonts/Brushstriketrial.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes glitch {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+    color: white;
+  }
+  35% {
+    color: hotpink;
+    font-style: italic;
+    transform: translateY(10px);
+  }
+  50% {
+    color: cyan;
+    font-style: normal;
+    transform: translateY(-15px) translateX(10px);
+  }
+  100% {
+    transform: translate(0);
+    color: black;
+  }
+}
+@keyframes glitch2 {
+    0% {
+      opacity: 0;
+    }
+    1% {
+      opacity: 1;
+      color: white;
+    }
+    35% {
+      color: hotpink;
+      font-style: italic;
+      transform: translateY(10px);
+    }
+    50% {
+      color: cyan;
+      font-style: normal;
+      transform: translateY(-15px) translateX(10px);
+    }
+    100% {
+      transform: translate(0);
+      color: black;
+    }
+  }
+
+@keyframes splash {
+  0% {
+    transform: scale(1);
+    background: black;
+  }
+  80% {
+    transform: scale(1);
+    background: black;
+  }
+  93% {
+    background: white;
+  }
+  96% {
+    background: cyan;
+  }
+  100% {
+    background: black;
+    transform: scaleY(0);
+  }
+}
+
+.splash {
+  pointer-events: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  animation: splash 1s ease forwards;
+  h1 {
+    font-family: "brushstrike";
+    font-size: 7rem;
+    font-weight: normal;
+    color: white;
+    animation: glitch 0.2s 2 none;
+  }
+}
+.background-video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  animation: glitch 0.1s 1.1s both;
+  &__title {
+    position: absolute;
+    top: 10vh;
+    left: 15vw;
+    font-family: "brushstrike";
+    font-size: 3rem;
+    animation: glitch 0.1s both 1.3s 2;
+  }
+  &__item {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    animation: splash 0.3s ease 1.3s none;
+    & p {
+      font-size: 1rem;
+      font-weight: normal;
+      margin-top: -10px;
+      text-transform: initial;
+    }
+    &.active {
+      animation: glitch 0.1s both;
+    }
+    &--a {
+      top: 35vh;
+      left: 10vw;
+    }
+    &--s {
+      top: 45vh;
+      left: 70vw;
+    }
+    &--d {
+      top: 65vh;
+      left: 25vw;
+      animation: glitch2 0.1s none 1.2s;
+    }
+    &--f {
+      top: 25vh;
+      left: 80vw;
+      animation: glitch2 0.2s none 1.4s 2;
+    }
+    &--k {
+      top: 75vh;
+      left: 85vw;
+    }
+    &--space {
+      top: 45vh;
+      left: 0vw;
+    p{
+        
+        margin: 0 0 0 10px;
+    }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BananaBeat</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <script src="app.js" defer></script>
+  </head>
+
+  <body>
+    <div class="splash">
+      <div class="splash__overlay"><h1>BananaBeat</h1></div>
+    </div>
+
+    <video class="background-video" autoplay muted loop>
+      <source src="assets/banana.mp4" type="video/mp4" />
+    </video>
+    <div class="container">
+      <div class="container__title">BananaBeat</div>  
+
+
+      <div class="container__item container__item--a">a <p>Clap-808</p></div>
+      <div class="container__item container__item--s">s <p>Hihat-electro</p></div>
+      <div class="container__item container__item--d">d <p>Kick-newwave</p></div>
+      <div class="container__item container__item--f">f <p>Snare-modular</p></div>
+      <div class="container__item container__item--k">k <p>Tom-fm</p></div>
+      <div class="container__item container__item--space">_____<p>Hit Any Key</p></div>
+    </div>
+    <audio id="a" src="/assets/clap-808.wav"></audio>
+    <audio id="d" src="/assets/hihat-electro.wav"></audio>
+    <audio id="s" src="/assets/kick-newwave.wav"></audio>
+    <audio id="f" src="/assets/snare-modular.wav"></audio>
+    <audio id="k" src="/assets/tom-fm.wav"></audio>
+    <audio id="space" src="/assets/shaker-shuffle.wav"></audio>
+  </body>
+</html>
